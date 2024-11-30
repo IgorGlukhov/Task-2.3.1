@@ -33,6 +33,7 @@ public class UserController {
 
     @PostMapping
     public String saveUser(@ModelAttribute User user) {
+        System.out.println("Received PUT request for user ID: ");
         userService.saveUser(user);
         return "redirect:/users";
     }
@@ -45,15 +46,16 @@ public class UserController {
         return "editUser";
     }
 
-    @PostMapping("/edit/{id}")
-    public String updateUser(@PathVariable Long id, @ModelAttribute User user) {
+    @PatchMapping("/edit/{id}")
+    public String updateUser(@PathVariable Long id, @ModelAttribute("user") User user) {
+        System.out.println("Received PUT request for user ID: " + id);
         user.setId(id);
         userService.saveUser(user);
         return "redirect:/users";
     }
 
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public String deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
         return "redirect:/users";
