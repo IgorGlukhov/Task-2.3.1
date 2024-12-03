@@ -1,10 +1,10 @@
-package web.service;
+package com.example.crud.service;
 
+import com.example.crud.dao.UserDao;
+import com.example.crud.model.User;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import web.dao.UserDao;
-import web.models.User;
 
 import java.util.List;
 

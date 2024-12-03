@@ -1,10 +1,11 @@
-package web.controller;
+package com.example.crud.controller;
 
+
+import com.example.crud.model.User;
+import com.example.crud.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import web.models.User;
-import web.service.UserService;
 
 @Controller
 @RequestMapping("/users")
@@ -61,3 +62,4 @@ public class UserController {
         return "redirect:/users";
     }
 }
+
