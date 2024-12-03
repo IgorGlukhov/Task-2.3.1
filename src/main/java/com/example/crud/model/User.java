@@ -1,11 +1,12 @@
-package web.models;
+package com.example.crud.model;
 
-import lombok.*;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 @Data
 @NoArgsConstructor
 public class User {
@@ -14,10 +15,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="Email")
+    @Column(name = "Email")
     private String email;
 
-    @Column(name="Password")
+    @Column(name = "Password")
     private String password;
 
 }
+
